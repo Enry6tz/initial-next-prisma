@@ -3,6 +3,7 @@ import { prisma } from "@/lib/prisma";
 
 // GET /api/products — lista todos los productos
 export async function GET() {
+  
   const products = await prisma.product.findMany({
     orderBy: { createdAt: "desc" },
   });

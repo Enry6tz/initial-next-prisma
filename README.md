@@ -79,6 +79,30 @@ prisma/
 docs/                      # Documentacion Etapa 1
 ```
 
+## Comandos utiles
+
+```bash
+# Regenerar cliente Prisma (necesario despues de cambiar schema.prisma o instalar deps)
+npx prisma generate
+
+# Ejecutar migraciones pendientes
+npx prisma migrate dev
+
+# Abrir Prisma Studio (explorar la DB en el navegador)
+npx prisma studio
+
+# Iniciar el servidor de desarrollo
+npm run dev
+
+# Si el servidor no conecta a la DB, para el server (Ctrl+C) y ejecuta:
+npx prisma generate && npm run dev
+
+# Si el puerto 3000 esta ocupado, matar el proceso (reemplazar PID):
+# taskkill /PID <numero> /F
+```
+
+> **Nota:** Cada vez que se instalan dependencias (`npm install`) o se modifica `prisma/schema.prisma`, hay que correr `npx prisma generate` antes de iniciar el servidor.
+
 ## Variables de entorno
 
 Ver `.env.example` para la lista completa de variables necesarias.
